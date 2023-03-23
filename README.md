@@ -98,10 +98,9 @@ git clone git@github.com:MNisarAli/OOP-school-library.git
 <!-- FUTURE FEATURES -->
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Use the "Decorator" design pattern**
 - [ ] **Set up associations**
 - [ ] **Add basic UI**
-- [ ] **Refactor your code**
+- [ ] **Refactor code**
 - [ ] **Preserve data**
 - [ ] **Unit tests**
 

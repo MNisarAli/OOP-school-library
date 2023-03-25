@@ -97,4 +97,31 @@ class App
       puts "Book: #{rental.book.title} | Date: #{rental.date}"
     end
   end
+
+  def main
+    menu_options = {
+      1 => method(:handle_list_books),
+      2 => method(:handle_list_people),
+      3 => method(:handle_create_person),
+      4 => method(:handle_create_book),
+      5 => method(:handle_create_rental),
+      6 => method(:handle_list_rentals),
+      7 => method(:handle_quit)
+    }
+
+    loop do
+      puts 'What would you like to do?'
+      menu_options.each { |option, action| puts "#{option} - #{action.name.split(':').last.capitalize}" }
+      option = gets.chomp.to_i
+
+      if menu_options.key?(option)
+        menu_options[option].call
+      else
+        handle_invalid_option
+      end
+    end
+  end
 end
+
+app = App.new
+app.main

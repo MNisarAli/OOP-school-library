@@ -48,4 +48,14 @@ class App
     @people << person
     puts 'Person created successfully!'
   end
+
+  def create_book
+    puts 'Enter the book title:'
+    title = gets.chomp
+    puts 'Enter the book author:'
+    author = gets.chomp
+    book = Book.new(title, author)
+    @books << book
+    puts 'Book created successfully!'
+  end
 end

@@ -82,4 +82,19 @@ class App
     @rentals << rental
     puts 'Rental created successfully!'
   end
+
+  def list_rentals
+    puts 'Enter the person id:'
+    person_id = gets.chomp.to_i
+    person = @people.find { |p| p.id == person_id }
+    if person.nil?
+      puts 'Person not found!'
+      return
+    end
+
+    puts "List of Rentals for #{person.name}:"
+    person.rentals.each do |rental|
+      puts "Book: #{rental.book.title} | Date: #{rental.date}"
+    end
+  end
 end

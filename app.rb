@@ -18,4 +18,11 @@ class App
       puts "Title: #{book.title} | Author: #{book.author}"
     end
   end
+
+  def list_people
+    puts 'List of People:'
+    @people.each do |person|
+      puts "ID: #{person.id} | Name: #{person.name} | Age: #{person.age}"
+    end
+  end
 end

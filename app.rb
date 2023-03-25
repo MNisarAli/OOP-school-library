@@ -25,4 +25,27 @@ class App
       puts "ID: #{person.id} | Name: #{person.name} | Age: #{person.age}"
     end
   end
+
+  def create_person
+    puts 'What type of person would you like to create? (1) Teacher (2) Student'
+    type = gets.chomp.to_i
+    puts 'Enter the person name:'
+    name = gets.chomp
+    puts 'Enter the person age:'
+    age = gets.chomp.to_i
+
+    case type
+    when 1
+      puts 'Enter the teacher specialization:'
+      specialization = gets.chomp
+      person = Teacher.new(specialization, age, name: name)
+    when 2
+      puts 'Enter the student classroom:'
+      classroom = gets.chomp
+      person = Student.new(Classroom.new(classroom), age, name: name)
+    end
+
+    @people << person
+    puts 'Person created successfully!'
+  end
 end

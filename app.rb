@@ -106,7 +106,7 @@ class App
       4 => method(:handle_create_book),
       5 => method(:handle_create_rental),
       6 => method(:handle_list_rentals),
-      7 => method(:handle_quit)
+      0 => method(:handle_quit)
     }
 
     loop do

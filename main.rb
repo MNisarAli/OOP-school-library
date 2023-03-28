@@ -1,5 +1,5 @@
-require_relative 'app'
-require_relative 'menu'
+require_relative './bin/app'
+require_relative './bin/menu'
 
 app = App.new
 menu = Menu.new(app)

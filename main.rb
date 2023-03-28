@@ -1,34 +1,15 @@
 require_relative 'app'
+require_relative 'menu'
 
-OPTIONS = {
-  1 => 'list_books',
-  2 => 'list_people',
-  3 => 'create_person',
-  4 => 'create_book',
-  5 => 'create_rental',
-  6 => 'list_rentals',
-  0 => 'quit'
-}.freeze
+app = App.new
+menu = Menu.new(app)
 
-def main
-  app = App.new
+loop do
+  menu.display_options
+  choice = gets.chomp.to_i
+  break if choice.zero?
 
-  loop do
-    puts 'What would you like to do?'
-    OPTIONS.each { |key, value| puts "#{key}. #{value.capitalize.gsub('_', ' ')}" }
-
-    choice = gets.chomp.to_i
-
-    if OPTIONS.key?(choice)
-      break if choice.zero?
-
-      app.send(OPTIONS[choice])
-    else
-      puts 'Invalid option, please choose a number from 0 to 6'
-    end
-  end
-
-  puts 'Goodbye!'
+  menu.handle_choice(choice)
 end
 
-main
+puts 'Goodbye!'

@@ -14,16 +14,12 @@ class App
 
   def list_books
     puts 'List of Books:'
-    @books.each do |book|
-      puts "Title: #{book.title} | Author: #{book.author}"
-    end
+    @books.each { |book| puts "Title: #{book.title} | Author: #{book.author}" }
   end
 
   def list_people
     puts 'List of People:'
-    @people.each do |person|
-      puts "ID: #{person.id} | Name: #{person.name} | Age: #{person.age}"
-    end
+    @people.each { |person| puts "ID: #{person.id} | Name: #{person.name} | Age: #{person.age}" }
   end
 
   def create_person

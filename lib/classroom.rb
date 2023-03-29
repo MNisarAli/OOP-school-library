@@ -6,6 +6,7 @@ class Classroom
   def initialize(label)
     @label = label
     @students = []
+    @name = ''
   end
 
   def add_student(student)

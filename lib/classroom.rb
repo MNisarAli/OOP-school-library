@@ -9,7 +9,7 @@ class Classroom
   end
 
   def add_student(student)
-    @students << student unless @students.include?(self)
+    @students << student unless @students.include?(student)
     student.classroom = self
   end
 end

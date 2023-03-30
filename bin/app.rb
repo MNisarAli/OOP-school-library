@@ -44,6 +44,8 @@ class App
     else
       puts 'Invalid input, Please enter a valid number!'
     end
+
+    save_persons
   end
 
   def create_teacher

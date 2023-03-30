@@ -32,3 +32,17 @@ def save_books
     file.write(JSON.pretty_generate(books))
   end
 end
+
+def read_persons
+  return [] unless File.exist?('./db/persons.json')
+
+  persons_json = JSON.parse(File.read('./db/persons.json'))
+  persons_json.map do |person|
+    case person['class']
+    when 'Teacher'
+      Teacher.new(person['specialization'], person['age'], person['name'])
+    when 'Student'
+      Student.new(person['classroom'], person['age'], name: person['name'])
+    end
+  end
+end

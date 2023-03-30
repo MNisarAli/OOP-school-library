@@ -34,24 +34,39 @@ class App
   def create_person
     puts 'What type of person would you like to create? (1) Teacher (2) Student'
     type = gets.chomp.to_i
-    puts 'Enter the person name:'
-    name = gets.chomp
-    puts 'Enter the person age:'
-    age = gets.chomp.to_i
 
     case type
     when 1
-      puts 'Enter the teacher specialization:'
-      specialization = gets.chomp
-      person = Teacher.new(specialization, age, name: name)
+      create_teacher
     when 2
-      puts 'Enter the student classroom:'
-      classroom = gets.chomp
-      person = Student.new(Classroom.new(classroom), age, name: name)
+      create_student
+    else
+      puts 'Invalid input, Please enter a valid number!'
     end
+  end
 
+  def create_teacher
+    puts 'Enter the teacher name:'
+    name = gets.chomp
+    puts 'Enter the teacher age:'
+    age = gets.chomp.to_i
+    puts 'Enter the teacher specialization:'
+    specialization = gets.chomp
+    person = Teacher.new(name, age, specialization)
     @people << person
-    puts 'Person created successfully!'
+    puts 'Teacher created successfully!'
+  end
+
+  def create_student
+    puts 'Enter the student name:'
+    name = gets.chomp
+    puts 'Enter the student age:'
+    age = gets.chomp.to_i
+    puts 'Enter the student classroom:'
+    classroom = gets.chomp
+    person = Student.new(name, age, Classroom.new(classroom))
+    @people << person
+    puts 'Student created successfully!'
   end
 
   def create_book

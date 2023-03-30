@@ -109,7 +109,6 @@ git clone git@github.com:MNisarAli/OOP-school-library.git
 <!-- FUTURE FEATURES -->
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Preserve data**
 - [ ] **Unit tests**
 
 

@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2023-03-29",
+    "book_index": 0,
+    "person_index": 0
+  },
+  {
+    "date": "2023-03-28",
+    "book_index": 0,
+    "person_index": 1
+  },
+  {
+    "date": "2023-03-30",
+    "book_index": 0,
+    "person_index": 0
+  },
+  {
+    "date": "2023-03-30",
+    "book_index": 0,
+    "person_index": 0
+  }
+]

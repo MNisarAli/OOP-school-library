@@ -1,0 +1,24 @@
+[
+  {
+    "class": "Student",
+    "name": "Harry",
+    "age": 15,
+    "classroom": "Lime",
+    "parent_permission": true,
+    "index": 0
+  },
+  {
+    "class": "Teacher",
+    "name": "Yakooza",
+    "age": 32,
+    "specialization": "Physics",
+    "index": 1
+  },
+  {
+    "class": "Teacher",
+    "name": "Maths",
+    "age": 47,
+    "specialization": "Yumuchi",
+    "index": 2
+  }
+]

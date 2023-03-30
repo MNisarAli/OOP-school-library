@@ -53,7 +53,7 @@ def read_persons
     when 'Teacher'
       Teacher.new(person['specialization'], person['age'], person['name'])
     when 'Student'
-      Student.new(person['classroom'], person['age'], name: person['name'])
+      Student.new(person['classroom'], person['age'], person['name'])
     end
   end
 end

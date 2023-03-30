@@ -4,6 +4,7 @@ require_relative '../lib/teacher'
 require_relative '../lib/student'
 require_relative '../lib/classroom'
 require_relative '../lib/rental'
+require_relative 'preserve'
 
 class App
   def initialize

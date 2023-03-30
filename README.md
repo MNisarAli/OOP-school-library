@@ -91,6 +91,17 @@ git clone git@github.com:MNisarAli/OOP-school-library.git
 - Gmail: [Muhammad Nisar Ali](mailto:dr.nisaralig@gmail.com)
 - LinkedIn: [Muhammad Nisar Ali](https://linkedin.com/in/muhammad-nisar-ali-45a865251)
 
+👤 **Amaka Laura Konwea**
+- GitHub: [@githubhandle](https://github.com/lawrahkonwea)
+- Twitter: [@twitterhandle](https://twitter.com/lawrah_xo)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/amakalaurakonwea/)
+
+👤 **Thinus Van De Venter**
+
+- GitHub: [@Thinus01](https://github.com/Thinus01)
+- Twitter: [@thinus_v_d_v](https://twitter.com/thinus_v_d_v)
+- LinkedIn: [Thinus Van De Venter](https://www.linkedin.com/in/thinus-van-de-venter-99aa26203)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,7 +109,6 @@ git clone git@github.com:MNisarAli/OOP-school-library.git
 <!-- FUTURE FEATURES -->
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Preserve data**
 - [ ] **Unit tests**
 
 

@@ -1,15 +1,16 @@
-require_relative 'book'
-require_relative 'person'
-require_relative 'teacher'
-require_relative 'student'
-require_relative 'classroom'
-require_relative 'rental'
+require_relative '../lib/book'
+require_relative '../lib/person'
+require_relative '../lib/teacher'
+require_relative '../lib/student'
+require_relative '../lib/classroom'
+require_relative '../lib/rental'
+require_relative 'preserve'
 
 class App
   def initialize
-    @people = []
-    @books = []
-    @rentals = []
+    @people = read_persons
+    @books = read_books
+    @rentals = read_rentals
   end
 
   def list_books
@@ -19,30 +20,56 @@ class App
 
   def list_people
     puts 'List of People:'
-    @people.each { |person| puts "ID: #{person.id} | Name: #{person.name} | Age: #{person.age}" }
+    @people.each { |person| display_person(person) }
+  end
+
+  def display_person(person)
+    if person.instance_of?(Teacher)
+      puts "[#{person.class}] ID: #{person.id} | Name: #{person.name} | Age: #{person.age} | " \
+           "Specialization: #{person.specialization}"
+    else
+      puts "[#{person.class}] ID: #{person.id} | Name: #{person.name} | Age: #{person.age} | Class: #{person.classroom}"
+    end
   end
 
   def create_person
     puts 'What type of person would you like to create? (1) Teacher (2) Student'
     type = gets.chomp.to_i
-    puts 'Enter the person name:'
-    name = gets.chomp
-    puts 'Enter the person age:'
-    age = gets.chomp.to_i
 
     case type
     when 1
-      puts 'Enter the teacher specialization:'
-      specialization = gets.chomp
-      person = Teacher.new(specialization, age, name: name)
+      create_teacher
     when 2
-      puts 'Enter the student classroom:'
-      classroom = gets.chomp
-      person = Student.new(Classroom.new(classroom), age, name: name)
+      create_student
+    else
+      puts 'Invalid input, Please enter a valid number!'
     end
 
+    save_persons
+  end
+
+  def create_teacher
+    puts 'Enter the teacher name:'
+    name = gets.chomp
+    puts 'Enter the teacher age:'
+    age = gets.chomp.to_i
+    puts 'Enter the teacher specialization:'
+    specialization = gets.chomp
+    person = Teacher.new(name, age, specialization)
     @people << person
-    puts 'Person created successfully!'
+    puts 'Teacher created successfully!'
+  end
+
+  def create_student
+    puts 'Enter the student name:'
+    name = gets.chomp
+    puts 'Enter the student age:'
+    age = gets.chomp.to_i
+    puts 'Enter the student classroom:'
+    classroom = gets.chomp
+    person = Student.new(name, age, Classroom.new(classroom))
+    @people << person
+    puts 'Student created successfully!'
   end
 
   def create_book
@@ -52,6 +79,7 @@ class App
     author = gets.chomp
     book = Book.new(title, author)
     @books << book
+    save_books
     puts 'Book created successfully!'
   end
 
@@ -76,6 +104,7 @@ class App
     date = gets.chomp
     rental = Rental.new(date, book, person)
     @rentals << rental
+    save_rentals
     puts 'Rental created successfully!'
   end
 

@@ -46,3 +46,12 @@ def read_persons
     end
   end
 end
+
+def read_books
+  return [] unless File.exist?('./db/books.json')
+
+  books_json = JSON.parse(File.read('./db/books.json'))
+  books_json.map do |book|
+    Book.new(book['title'], book['author'])
+  end
+end

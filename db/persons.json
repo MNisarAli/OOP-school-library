@@ -16,9 +16,17 @@
   },
   {
     "class": "Teacher",
-    "name": "Maths",
+    "name": "Yumuchi",
     "age": 47,
-    "specialization": "Yumuchi",
+    "specialization": "Maths",
     "index": 2
+  },
+  {
+    "class": "Student",
+    "name": "Sihan",
+    "age": 43,
+    "classroom": "Red",
+    "parent_permission": true,
+    "index": 3
   }
 ]

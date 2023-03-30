@@ -9,7 +9,7 @@ require_relative 'preserve'
 class App
   def initialize
     @people = read_persons
-    @books = []
+    @books = read_books
     @rentals = []
   end
 

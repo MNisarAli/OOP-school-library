@@ -22,6 +22,17 @@ def save_persons
   end
 end
 
+def save_books
+  File.open('./db/books.json', 'w') do |file|
+    books = @books.each_with_index.map do |book, index|
+      { title: book.title,
+        author: book.author,
+        index: index }
+    end
+    file.write(JSON.pretty_generate(books))
+  end
+end
+
 def save_rentals
   File.open('./db/rentals.json', 'w') do |file|
     rentals = @rentals.each_with_index.map do |rental, _index|

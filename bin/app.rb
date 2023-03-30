@@ -8,7 +8,7 @@ require_relative 'preserve'
 
 class App
   def initialize
-    @people = []
+    @people = read_persons
     @books = []
     @rentals = []
   end

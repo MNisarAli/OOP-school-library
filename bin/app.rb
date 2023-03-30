@@ -19,7 +19,16 @@ class App
 
   def list_people
     puts 'List of People:'
-    @people.each { |person| puts "ID: #{person.id} | Name: #{person.name} | Age: #{person.age}" }
+    @people.each { |person| display_person(person) }
+  end
+
+  def display_person(person)
+    if person.instance_of?(Teacher)
+      puts "[#{person.class}] ID: #{person.id} | Name: #{person.name} | Age: #{person.age} | " \
+           "Specialization: #{person.specialization}"
+    else
+      puts "[#{person.class}] ID: #{person.id} | Name: #{person.name} | Age: #{person.age} | Class: #{person.classroom}"
+    end
   end
 
   def create_person

@@ -79,6 +79,7 @@ class App
     author = gets.chomp
     book = Book.new(title, author)
     @books << book
+    save_books 
     puts 'Book created successfully!'
   end
 

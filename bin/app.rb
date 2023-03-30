@@ -10,7 +10,7 @@ class App
   def initialize
     @people = read_persons
     @books = read_books
-    @rentals = []
+    @rentals = read_rentals
   end
 
   def list_books
@@ -104,6 +104,7 @@ class App
     date = gets.chomp
     rental = Rental.new(date, book, person)
     @rentals << rental
+    save_rentals
     puts 'Rental created successfully!'
   end
 

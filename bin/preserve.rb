@@ -22,14 +22,14 @@ def save_persons
   end
 end
 
-def save_books
-  File.open('./db/books.json', 'w') do |file|
-    books = @books.each_with_index.map do |book, index|
-      { title: book.title,
-        author: book.author,
-        index: index }
+def save_rentals
+  File.open('./db/rentals.json', 'w') do |file|
+    rentals = @rentals.each_with_index.map do |rental, _index|
+      { date: rental.date,
+        book_index: @books.index(rental.book),
+        person_index: @people.index(rental.person) }
     end
-    file.write(JSON.pretty_generate(books))
+    file.write(JSON.pretty_generate(rentals))
   end
 end
 
@@ -53,5 +53,14 @@ def read_books
   books_json = JSON.parse(File.read('./db/books.json'))
   books_json.map do |book|
     Book.new(book['title'], book['author'])
+  end
+end
+
+def read_rentals
+  return [] unless File.exist?('./db/rentals.json')
+
+  rentals_json = JSON.parse(File.read('./db/rentals.json'))
+  rentals_json.map do |rental|
+    Rental.new(rental['date'], @books[rental['book_index']], @people[rental['person_index']])
   end
 end

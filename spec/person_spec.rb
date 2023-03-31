@@ -7,11 +7,11 @@ describe 'testing person' do
       expect(person.class).to eq Person
     end
     it "should return the person's name" do
-      person = Person.new(12, 'Nisar')
-      expect(person.correct_name).to eq 'Nisar'
+      person = Person.new(12)
+      expect(person.correct_name).to eq 'unknown'
     end
     it 'should return if the person can use services or not = ' do
-      person = Person.new(12, 'Amaka')
+      person = Person.new(12)
       expect(person.can_use_services?).to eq true
     end
   end
